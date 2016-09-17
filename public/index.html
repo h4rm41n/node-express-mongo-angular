@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html  ng-app="crud">
+<head>
+	<title>Hello world!</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<style type="text/css">
+	input.ng-invalid{
+		border: red 1px solid;
+	}
+</style>
+<body>
+	<div class="container" ng-controller="appCtrl">
+		<h2>Contac List</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Number</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>
+						<input type=text class="form-control" ng-model="person.name" required>
+					</th>
+					<th>
+						<input type=email class="form-control" ng-model="person.email" required>
+					</th>
+					<th>
+						<input type=number class="form-control" ng-model="person.number" required>
+					</th>
+					<th>
+						<input type=button class="btn btn-info" value="Save" ng-disabled="btnSave" ng-model="btnSave" ng-click="addContact()"/>
+					</th>
+					<th>
+						<input type=button class="btn btn-primary" value="Update" ng-disabled="btnUpdate" ng-model="btnUpdate" ng-click="updateContact()"/>
+					</th>
+				</tr>
+				<tr ng-repeat="org in persons">
+					<td>{{org.name}}</td>
+					<td>{{org.email}}</td>
+					<td>{{org.number}}</td>
+					<td>
+						<button class="btn btn-danger" ng-click="removeContact(org._id)">Remove</button>
+					</td>
+					<td>
+						<button class="btn btn-warning" ng-click="editContact(org._id)">Edit</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="/controllers/ctrl.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>

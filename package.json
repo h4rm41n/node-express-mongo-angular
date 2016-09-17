@@ -1,0 +1,28 @@
+{
+  "name": "test-crud-express",
+  "version": "1.0.0",
+  "description": "Membuat crud express with mongodb",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h4rm41n/node-express-mongo-angular.git"
+  },
+  "author": "ahmad harmain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h4rm41n/node-express-mongo-angular/issues"
+  },
+  "homepage": "https://github.com/h4rm41n/node-express-mongo-angular#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongojs": "^2.4.0"
+  }
+}
