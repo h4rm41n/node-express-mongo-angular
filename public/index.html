@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html  ng-app="crud">
 <head>
-	<title>Hello world!</title>
+	<title>Contact Baok-baok</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
 
 </head>
 <style type="text/css">
@@ -13,14 +14,20 @@
 </style>
 <body>
 	<div class="container" ng-controller="appCtrl">
-		<h2>Contac List</h2>
+		<h2>Daftar Contact Baok-Baok</h2>
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Name</th>
+					<th>Nama</th>
 					<th>Email</th>
-					<th>Number</th>
+					<th>Nomor Handphone</th>
 					<th>Action</th>
+				</tr>
+				<tr class="bg-danger">
+					<td>{{person.name}}</td>
+					<td>{{person.email}}</td>
+					<td>{{person.number}}</td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,10 +42,10 @@
 						<input type=number class="form-control" ng-model="person.number" required>
 					</th>
 					<th>
-						<input type=button class="btn btn-info" value="Save" ng-disabled="btnSave" ng-model="btnSave" ng-click="addContact()"/>
+						<button type=button class="btn btn-info" ng-disabled="btnSave" ng-model="btnSave" ng-click="addContact()"><i class="glyphicon glyphicon-save"></i> Simpan</button>
 					</th>
 					<th>
-						<input type=button class="btn btn-primary" value="Update" ng-disabled="btnUpdate" ng-model="btnUpdate" ng-click="updateContact()"/>
+						<button type=button class="btn btn-primary" ng-disabled="btnUpdate" ng-model="btnUpdate" ng-click="updateContact()"><i class="glyphicon glyphicon-refresh"></i> Update</button>
 					</th>
 				</tr>
 				<tr ng-repeat="org in persons">
@@ -46,20 +53,19 @@
 					<td>{{org.email}}</td>
 					<td>{{org.number}}</td>
 					<td>
-						<button class="btn btn-danger" ng-click="removeContact(org._id)">Remove</button>
+						
+						<button class="btn btn-warning" ng-click="editContact(org._id)"><i class="glyphicon glyphicon-edit"></i> Edit</button>
 					</td>
 					<td>
-						<button class="btn btn-warning" ng-click="editContact(org._id)">Edit</button>
+						<button class="btn btn-danger" ng-click="removeContact(org._id)"><i class="glyphicon glyphicon-trash"></i> Remove</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>-->
+	<script type="text/javascript" src="/lib/angular/angular.min.js"></script>
 	<script type="text/javascript" src="/controllers/ctrl.js"></script>
-	<script type="text/javascript">
-		
-	</script>
 </body>
 </html>

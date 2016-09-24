@@ -1,6 +1,7 @@
+// import angular from 'angular';
+
 var app = angular.module('crud',[])
 	.controller('appCtrl',function($scope,$http){
-		
 		var disabledBtn = function(statusBtnSave, statusBtnUpdate){
 			$scope.btnSave = statusBtnSave;
 			$scope.btnUpdate = statusBtnUpdate;
@@ -8,7 +9,7 @@ var app = angular.module('crud',[])
 
 		var reload = function(){
 			$http.get('/contact').success(function(res){
-				//console.log('I got a requested');
+				console.log('I got a requested');
 				$scope.persons = res;
 				$scope.person = "";
 				disabledBtn(false,true);
@@ -26,7 +27,7 @@ var app = angular.module('crud',[])
 		};
 
 		$scope.removeContact = function(id){
-			//console.log(id)
+			console.log(id)
 			$http.delete('/contact/'+id).success(function(res){
 				console.log(res);
 				reload();
@@ -35,7 +36,7 @@ var app = angular.module('crud',[])
 
 		$scope.editContact = function(id){
 			disabledBtn(true,false);
-			//console.log(id);
+			console.log(id);
 			$http.get('/contact/'+id).success(function(res){
 				$scope.person = res;
 			});
